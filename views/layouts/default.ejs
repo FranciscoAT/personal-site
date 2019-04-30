@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= title %></title>
+
+        <%- style %>
+    </head>
+    <body>
+        <header>
+            <%- defineContent('header') %>
+        </header>
+
+        <%- body %>
+
+        <footer>
+            <%- defineContent('footer') %>
+        </footer>
+
+        <%- script %>
+    </body>
+</html>
