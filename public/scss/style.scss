@@ -1,8 +1,73 @@
+/** ----- VARIABLES ----- **/
+
+// Colours
+
+$default-red: rgb(255, 36, 36);
+$off-dark: rgb(97, 137, 47);
+$off-light: rgb(134, 194, 50);
+$background: rgb(34, 38 ,41);
+$main-dark: rgb(71, 75, 79);
+$main-light: rgb(107, 110, 112);
+$text-main: white;
+$text-off: $main-light;
+
+// Break Sizes
+
+$break-large: 1008px;
+$break-medium: 1007px;
+$break-small: 673px;
+
+/** ----- DEFAULTS ----- **/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
 body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: $background;
+    color: $text-main;
 }
 
 a {
-    color: #00B7FF;
+    color: $text-main;
+}
+
+
+/** ----- LINKS ----- **/
+
+.bottom-border-hover {
+    text-decoration: none;
+    position: relative;
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid $off-dark;
+        width: 0;
+        top: 1.3em;
+        position: absolute;
+        transition: 0.3s ease;
+    }
+
+    &:before {
+        left: 50%;
+    }
+
+    &:after {
+        right: 50%;
+    }
+
+    &:hover {
+        color: $off-dark;
+        &:after, &:before {
+            width: 50%;
+        }
+    }
 }

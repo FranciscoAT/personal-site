@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var sassMiddleware = require("node-sass-middleware");
 const expressLayouts = require("express-ejs-layouts");
+const constants = require(path.join(__dirname, "routes", "constants"));
 
 // master router
 var masterRouter = require("./routes/index");
@@ -34,6 +35,8 @@ app.use(
     })
 );
 app.use(express.static(path.join(__dirname, "public")));
+
+app.locals = constants;
 
 app.use("/", masterRouter);
 
